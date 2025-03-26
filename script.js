@@ -147,4 +147,4 @@ document.addEventListener('DOMContentLoaded', function() {
         e.target.style.display = 'none';
       }
     });
-  });  
+  });
