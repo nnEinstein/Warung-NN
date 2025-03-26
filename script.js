@@ -148,3 +148,26 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  //Efek slide
+document.addEventListener('DOMContentLoaded', () => {
+  const elements = document.querySelectorAll('.slide-left, .slide-right');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+      // Untuk animasi berulang saat scroll lagi:
+      else {
+          entry.target.classList.remove('active');
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  elements.forEach(element => {
+    observer.observe(element);
+  });
+});
